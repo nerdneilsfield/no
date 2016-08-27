@@ -5,16 +5,16 @@ export PATH
 clear;
 # Logo 	******************************************************************
 CopyrightLogo='
-                        CentOS6.x  OpenVPN-2.3.10 云免服务器                                  
-                         Powered by 沔县聂人狂 2015-2016                     
-                                All Rights Reserved                  
-                                                                            
-                                                    by 聂人狂               
+                        CentOS6.x  OpenVPN-2.3.10 云免服务器
+                         Powered by 沔县聂人狂 2015-2016
+                                All Rights Reserved
+
+                                                    by 聂人狂
 ==========================================================================';
 echo "$CopyrightLogo";
 echo "请按回车执行安装"
 read
-echo 
+echo
 # sbwml
 echo "正在进行部署环境..."
 sleep 3
@@ -88,27 +88,27 @@ chkconfig openvpn on
 # OpenVPN Installing ****************************************************************************
 cp /etc/openvpn/easy-rsa/keys/{ca.crt,me.{crt,key}} /home/
 cd /home/
-wget https://raw.github.com/mu228/no/master/onlyme.ovpn
+# git@github.com:nerdneilsfield/no.git
+wget https://raw.github.com/nerdneilsfield/no/master/onlyme.ovpn
 tar -zcvf openvpn.tar.gz ./{onlyme.ovpn,ca.crt,me.{crt,key}}
 rm -rf ./{onlyme.ovpn,ca.crt,me.{crt,key}}
 # OpenVPN Installing ****************************************************************************
 echo "正在创建下载链接："
-echo 
+echo
 sleep 2
 echo '=========================================================================='
-echo 
+echo
 curl --upload-file ./openvpn.tar.gz https://transfer.sh/openvpn.tar.gz
-echo 
+echo
 echo "上传成功："
 echo "请复制https://链接到浏览器下载配置文件"
-echo 
+echo
 echo '=========================================================================='
 echo
 Client='
-                               OpenVPN-2.3.10 安装完毕                                
-                         Powered by 沔县聂人狂 2015-2016                     
-                                 All Rights Reserved                  
-                                                                            
+                               OpenVPN-2.3.10 安装完毕
+                         Powered by 沔县聂人狂 2015-2016
+                                 All Rights Reserved
+
 ==========================================================================';
 echo "$Client";
-
